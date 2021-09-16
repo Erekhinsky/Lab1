@@ -5,7 +5,7 @@
     <title>Лабораторная работа по Web-программированию №1</title>
     <style>
         body {
-            background-color: #4989c4;
+            background-color: #9bb0fa;
         }
 
         html, body { height:100%; margin:0; padding:0; }
@@ -13,14 +13,14 @@
             border: 0;
             border-radius: 10px;
             border-spacing: 10px;
-            background: #d4fff9;
+            background: #9bb0fa;
             padding: 15px;
             text-align: center;
         }
         th, td, tr{
             border: 0 solid black;
             border-radius: 10px;
-            background: #6efce4;
+            background: #5c91e0;
             padding: 25px;
             text-align: center;
         }
@@ -32,7 +32,7 @@
             color: black;
         }
         h2 i{
-            color:red; /* задаём цвет шрифта*/
+            color:blue; /* задаём цвет шрифта*/
         }
         #buttons{
             font-size: 24px;
@@ -69,12 +69,16 @@
             border-radius: 5px;
         }
         .radio_button{
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             border: 0;
         }
         #td-task, #task{
             vertical-align: top;
+        }
+        #2{
+            border-radius: 5px;
+            width: auto;
         }
     </style>
 </head>
@@ -104,15 +108,33 @@
             <form></form>
             <form id="1" action="" onsubmit="execute();return false;">
                 <label>Выберите X:</label>
-                <input class="radio_button" type="radio" checked="checked" name="x" value="-4">-4
-                <input class="radio_button" type="radio" name="x" value="-3">-3
-                <input class="radio_button" type="radio" name="x" value="-2">-2
-                <input class="radio_button" type="radio" name="x" value="-1">-1
-                <input class="radio_button" type="radio" name="x" value="0">0
-                <input class="radio_button" type="radio" name="x" value="1">1
-                <input class="radio_button" type="radio" name="x" value="2">2
-                <input class="radio_button" type="radio" name="x" value="3">3
-                <input class="radio_button" type="radio" name="x" value="4">4
+                <label>
+                    <input class="radio_button" type="radio" checked="checked" name="x" value="-4">
+                </label>-4
+                <label>
+                    <input class="radio_button" type="radio" name="x" value="-3">
+                </label>-3
+                <label>
+                    <input class="radio_button" type="radio" name="x" value="-2">
+                </label>-2
+                <label>
+                    <input class="radio_button" type="radio" name="x" value="-1">
+                </label>-1
+                <label>
+                    <input class="radio_button" type="radio" name="x" value="0">
+                </label>0
+                <label>
+                    <input class="radio_button" type="radio" name="x" value="1">
+                </label>1
+                <label>
+                    <input class="radio_button" type="radio" name="x" value="2">
+                </label>2
+                <label>
+                    <input class="radio_button" type="radio" name="x" value="3">
+                </label>3
+                <label>
+                    <input class="radio_button" type="radio" name="x" value="4">
+                </label>4
                 <br>
                 <br>
                 <label>Введите Y:</label>
@@ -133,33 +155,25 @@
                 <br>
                 <br>
                 <input type="submit" name="submit" id="submit" class="submit" value="Добавить" tabindex="4" :disabled="isButtonDisabled"/>
+                <button class="main-offer__btn reset__btn" data-reset>
+                    Очистить
+                </button>
             </form>
         </td>
     </tr>
     <tr id="tr-result">
         <td rowspan="2">
-            <table id="result-table" class="sortable" width="650" border="0" cellspacing="4" cellpadding="4" align="center">
+            <table id="result-table" class="sortable" width="700" border="0" cellspacing="4" cellpadding="4" align="center">
                 <thead>
                 <tr>
-                    <th scope="col">XYR</th>
+                    <th scope="col">X Y R</th>
                     <th scope="col">Результат</th>
                     <th scope="col">Текущее время</th>
                     <th scope="col">Время вычисления</th>
                 </tr>
                 </thead>
                 <tbody id="results_table_body">
-                <!--<tr id="no_result"><th colspan="4">Нет результатов</th></tr>-->
-                <?php
-                session_start();
-                if (isset($_SESSION['results'])) {
-                    foreach ($_SESSION['results'] as $result) { ?>
-                <tr>
-                    <th><?php echo $result[0] ?></th>
-                    <th><?php echo $result[1] ?></th>
-                    <th><?php echo $result[2] ?></th>
-                    <th><?php echo $result[3] ?></th>
-                </tr>
-                <?php }} ?>
+                <tr id="no_result"><th colspan="4">Нет результатов</th></tr>
                 </tbody>
             </table>
         </td>

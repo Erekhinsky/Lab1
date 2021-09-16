@@ -21,6 +21,7 @@ function execute() {
         add_row(array[0], array[1], array[2], array[3]);
     })
 }
+
 function add_row(xyr, result, current_time, computation_time){
     if(result === undefined){
         alert(xyr);
@@ -32,14 +33,11 @@ function add_row(xyr, result, current_time, computation_time){
         let row = d.createElement("TR");
         tbody.appendChild(row);
 
-        //if (first) {
-        //    first = false;
-        //    d.getElementById("no_result").remove();
-        //}
+        if (first) {
+            first = false;
+            d.getElementById("no_result").remove();
+        }
 
-
-        // Создаем ячейки в вышесозданной строке
-        // и добавляем тх
         let td1 = d.createElement("TH");
         let td2 = d.createElement("TH");
         let td3 = d.createElement("TH");
@@ -57,3 +55,8 @@ function add_row(xyr, result, current_time, computation_time){
         td4.innerHTML = computation_time;
     }
 }
+
+
+
+
+

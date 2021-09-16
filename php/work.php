@@ -8,7 +8,7 @@ $check = false;
 $fail = "";
 $y = preg_replace("/,/", ".", $y);
 if (!(is_numeric($x))) $fail .= "Некорректное значение X\n";
-elseif ($y<=-3 || $y>=3 || !is_numeric($y)) $fail .= "Некорректное значение Y\n";
+elseif ($y<-3 || $y>3 || !is_numeric($y)) $fail .= "Некорректное значение Y\n";
 elseif (!is_numeric($r) || $r < 0) $fail .= "Некорректное значение R";
 
 if ($fail != "") die($fail);
@@ -20,19 +20,22 @@ $dt = new DateTime("now", new DateTimeZone('Europe/Moscow'));
 
 if ($check){
     // Сохранение в сессию
-    $result = array($x.";".$y.";".$r, "true", $dt->format('H:i:s'), $time);
+    if ($y="/d+[.,][0]+/"){
+
+    }
+    $result = array($x.";".$y.";".$r, "Попадает", $dt->format('H:i:s'), $time);
     if (!isset($_SESSION['results'])) {
         $_SESSION['results'] = array();
     }
     array_push($_SESSION['results'], $result);
-    echo $x . "; " . $y . "; " . $r . "#true#" . $dt->format('H:i:s') . "#" . $time;
+    echo $x . "; " . $y . "; " . $r . "#Попадает#" . $dt->format('H:i:s') . "#" . $time;
 }
 else {
     // Сохранение в сессию
-    $result = array($x.";".$y.";".$r, "false", $dt->format('H:i:s'), $time);
+    $result = array($x.";".$y.";".$r, "Не попадает", $dt->format('H:i:s'), $time);
     if (!isset($_SESSION['results'])) {
         $_SESSION['results'] = array();
     }
     array_push($_SESSION['results'], $result);
-    echo $x . "; " . $y . "; " . $r . "#false#" . $dt->format('H:i:s') . "#" . $time;
+    echo $x . "; " . $y . "; " . $r . "#Не попадает#" . $dt->format('H:i:s') . "#" . $time;
 }
