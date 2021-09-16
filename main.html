@@ -9,7 +9,7 @@
 <table>
     <tr>
         <th id="header" height="10%">
-            <h2>Шахов Кирилл Андреевич<br> Группа P3232 <br> Вариант: <i>2823</i></h2>
+            <h2>Ерехинский Андрей Владимирович<br> Группа P3233 <br> Вариант: <i>33007</i></h2>
         </th>
         <td id="td-task" rowspan="3">
             <ul id="task">
@@ -22,7 +22,7 @@
                 <li>Отступы элементов ввода должны задаваться в пикселях.</li>
                 <li>Страница должна содержать сценарий на языке JavaScript, осуществляющий валидацию значений, вводимых пользователем в поля формы. Любые некорректные значения (например, буквы в координатах точки или отрицательный радиус) должны блокироваться.</li>
             </ul>
-            <img src="img/pic.png" id="info-pic" alt="img/pic.png">
+            <img src="picture.png" id="info-pic" alt="picture.png">
         </td>
     </tr>
     <tr>
@@ -42,17 +42,19 @@
                 <br>
                 <br>
                 <label>Введите Y:</label>
-                <input type="text" id="input_text" placeholder="-5..3" name="y">
+                <label for="input_text">
+                </label><input type="text" id="input_text" placeholder="-3..3" name="y">
                 <span id="error"></span>
                 <br>
                 <br>
                 <label>Выберите R:</label>
+                <label for="select_r"></label>
                 <select name="r" id="select_r">
-                    <option value="1">1</option>
-                    <option value="1.5">1.5</option>
-                    <option value="2">2</option>
-                    <option value="2.5">2.5</option>
-                    <option value="3">3</option>
+                    <option type="radio" value="1">1</option>
+                    <option type="radio" value="2">2</option>
+                    <option type="radio" value="3">3</option>
+                    <option type="radio" value="4">4</option>
+                    <option type="radio" value="5">5</option>
                 </select>
                 <br>
                 <br>
@@ -67,8 +69,8 @@
                 <tr>
                     <th scope="col">XYR</th>
                     <th scope="col">Результат</th>
-                    <th scope="col">Current Time</th>
-                    <th scope="col">Computation Time</th>
+                    <th scope="col">Текущее время</th>
+                    <th scope="col">Время вычисления</th>
                 </tr>
                 </thead>
                 <tbody id="results_table_body">
@@ -91,7 +93,7 @@
     <tr>
         <td id="footer" height="10%">
             г. Санкт-Петербург<br>
-            2020 г.
+            2021 г.
         </td>
     </tr>
 </table>

@@ -9,18 +9,15 @@ $fail = "";
 $y = preg_replace("/,/", ".", $y);
 if (!(is_numeric($x))) $fail .= "Некорректное значение X\n";
 
-elseif ($y<=-5 || $y>=3 || !is_numeric($y)) $fail .= "Некорректное значение Y\n";
+elseif ($y<=-3 || $y>=3 || !is_numeric($y)) $fail .= "Некорректное значение Y\n";
 elseif (!is_numeric($r) || $r < 0) $fail .= "Некорректное значение R";
 if ($fail != "") die($fail);
-if ($x>=0 && $x<=$r/2 && $y<=0 && $y>=-$r) $check=true;
-elseif ($x<=0 && $y<=0 && $y>=-($x+$r)/2) $check=true;
+
+if ($x<=0 && $x>=-$r && $y<=0 && $y>=-$r) $check=true;
+elseif ($x>=0 && $y>=0 && $y<=($r-$x)) $check=true;
 elseif ($x<=0 && $y>=0 && $y<=sqrt($r*$r - $x*$x)) $check=true;
 $time = number_format(microtime(true)-$start,6);
 $dt = new DateTime("now", new DateTimeZone('Europe/Moscow'));
-
-
-
-
 
 if ($check){
     // Сохранение в сессию
