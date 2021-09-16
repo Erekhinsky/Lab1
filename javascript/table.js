@@ -4,8 +4,7 @@ let result;
 let result_array;
 let first = true;
 
-function execute()
-{
+function execute() {
     let inp = document.getElementsByName('x');
     for (let i = 0; i < inp.length; i++) {
         if (inp[i].type === "radio" && inp[i].checked) {
@@ -14,7 +13,7 @@ function execute()
     }
     Y = d.getElementById('input_text').value;
     R = d.getElementById('select_r').value;
-
+    
     $.get('./php/work.php', {x: X, y:Y, r: R}, function(data) {
         result = data; // ответ от сервера
         let array;
